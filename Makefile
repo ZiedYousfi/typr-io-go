@@ -7,7 +7,7 @@ REPO_URL = https://github.com/ZiedYousfi/typr-io/releases/download/$(VERSION)
 OS := $(shell uname -s | tr '[:upper:]' '[:lower:]')
 ARCH := $(shell uname -m)
 
-# Mapping OS and ARCH to Go conventions
+# Mapping OS and ARCH to Go conventionsHello from typr-io-go
 ifeq ($(OS),darwin)
     PLATFORM = macos
 else
