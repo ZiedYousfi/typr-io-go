@@ -1,7 +1,7 @@
 package typrio
 
 /*
-#cgo CFLAGS: -I${SRCDIR}/../include
+#cgo CFLAGS: -I${SRCDIR}/include
 
 #include <typr-io/c_api.h>
 #include <stdlib.h>

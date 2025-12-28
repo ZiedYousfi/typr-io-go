@@ -3,6 +3,6 @@
 package typrio
 
 /*
-#cgo LDFLAGS: -L${SRCDIR}/../lib/windows-arm64 -ltypr_io
+#cgo LDFLAGS: -L${SRCDIR}/lib/windows-arm64 -ltypr_io
 */
 import "C"
