@@ -1,17 +1,13 @@
 # Project parameters
 LIB_NAME = typr-io
-VERSION = v0.1.0
+VERSION = v0.2.0
 REPO_URL = https://github.com/ZiedYousfi/typr-io/releases/download/$(VERSION)
 
 # All supported platforms and architectures
 PLATFORMS = linux-arm64 linux-x86_64 macos-arm64 macos-x86_64 windows-arm64 windows-x64
 
-# Helper to fix library names (remove version suffixes and symlinks)
-define FIX_LIBS
-	@echo "Fixing library names in lib/$(1)..."
-	@find lib/$(1) -type f -name "libtypr_io.so.*" -exec mv {} lib/$(1)/libtypr_io.so \; 2>/dev/null || true
-	@find lib/$(1) -type f -name "libtypr_io.*.dylib" -exec mv {} lib/$(1)/libtypr_io.dylib \; 2>/dev/null || true
-	@find lib/$(1) -type l -name "libtypr_io.*" -delete 2>/dev/null || true
+define remove_other_headers
+	@find include/typr-io -name '*.hpp' -type f -exec rm -f {} +
 endef
 
 .PHONY: all install install-all install-current clean
@@ -84,6 +80,7 @@ install-all:
 	@rm -rf tmp-windows-x64 windows-x64.zip
 
 	@echo "Done! All platform libraries installed."
+	$(call remove_other_headers)
 	@echo ""
 	@echo "Library structure:"
 	@ls -la lib/
@@ -110,7 +107,7 @@ install-current:
 	@cp -R $(RELEASE_DIR)/include/* include/
 	@cp -R $(RELEASE_DIR)/lib/lib* lib/$(PLATFORM)-$(GOARCH)/
 
-	$(call FIX_LIBS,$(PLATFORM)-$(GOARCH))
+	$(call remove_other_headers,$(PLATFORM)-$(GOARCH))
 
 	@echo "Cleaning up temporary files..."
 	@rm -rf $(RELEASE_DIR)
