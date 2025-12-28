@@ -3,6 +3,6 @@
 package typrio
 
 /*
-#cgo LDFLAGS: -L${SRCDIR}/lib/windows-x64 -ltypr_io
+#cgo LDFLAGS: ${SRCDIR}/lib/windows-x64/typr_io.lib -luser32
 */
 import "C"

@@ -3,6 +3,6 @@
 package typrio
 
 /*
-#cgo LDFLAGS: -L${SRCDIR}/lib/macos-x86_64 -ltypr_io -Wl,-rpath,${SRCDIR}/lib/macos-x86_64
+#cgo LDFLAGS: ${SRCDIR}/lib/macos-x86_64/libtypr_io.a -lstdc++ -framework ApplicationServices -framework Carbon -framework Foundation -framework CoreGraphics
 */
 import "C"
