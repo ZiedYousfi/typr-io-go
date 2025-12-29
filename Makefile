@@ -1,6 +1,6 @@
 # Project parameters
 LIB_NAME = typr-io
-VERSION = v0.2.0
+VERSION = v0.2.1
 REPO_URL = https://github.com/ZiedYousfi/typr-io/releases/download/$(VERSION)
 
 # All supported platforms and architectures
