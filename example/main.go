@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	typrio "github.com/ziedyousfi/typr-io-go"
+	typrio "github.com/ziedyousfi/axidev-io-go"
 )
 
 func main() {
