@@ -3,6 +3,6 @@
 package axidevio
 
 /*
-#cgo windows,arm64 LDFLAGS: -L${SRCDIR}/lib/windows-arm64 -laxidev_io -luser32 -lc++ -lm
+#cgo windows,arm64 LDFLAGS: -L${SRCDIR}/lib/windows-arm64 -laxidev_io -luser32 -lstdc++ -lm
 */
 import "C"
