@@ -3,6 +3,6 @@
 package typrio
 
 /*
-#cgo LDFLAGS: ${SRCDIR}/lib/linux-x86_64/libtypr_io.a -lstdc++ -linput -ludev -lxkbcommon -lpthread
+#cgo LDFLAGS: ${SRCDIR}/lib/linux-x64/libtypr_io.a -lstdc++ -linput -ludev -lxkbcommon -lpthread
 */
 import "C"

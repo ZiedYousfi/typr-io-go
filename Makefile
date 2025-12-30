@@ -1,10 +1,10 @@
 # Project parameters
 LIB_NAME = axidev-io
-VERSION = v0.2.1
+VERSION = v0.3.0
 REPO_URL = https://github.com/ZiedYousfi/axidev-io/releases/download/$(VERSION)
 
 # All supported platforms and architectures
-PLATFORMS = linux-arm64 linux-x86_64 macos-arm64 macos-x86_64 windows-arm64 windows-x64
+PLATFORMS = linux-arm64 linux-x64 macos-arm64 macos-x86_64 windows-arm64 windows-x64
 
 define remove_other_headers
 	@find include/axidev-io -name '*.hpp' -type f -exec rm -f {} +
@@ -30,14 +30,14 @@ install-all:
 	$(call FIX_LIBS,linux-arm64)
 
 	# Download and extract Linux x86_64
-	@echo "Fetching linux-x86_64..."
-	@curl -sL $(REPO_URL)/$(LIB_NAME)-$(VERSION)-linux-x86_64.tar.gz -o linux-x86_64.tar.gz
-	@mkdir -p tmp-linux-x86_64 lib/linux-x86_64
-	@tar -xzf linux-x86_64.tar.gz -C tmp-linux-x86_64
-	@cp -R tmp-linux-x86_64/include/* include/ 2>/dev/null || true
-	@cp -R tmp-linux-x86_64/lib/lib* lib/linux-x86_64/
-	@rm -rf tmp-linux-x86_64 linux-x86_64.tar.gz
-	$(call FIX_LIBS,linux-x86_64)
+	@echo "Fetching linux-x64..."
+	@curl -sL $(REPO_URL)/$(LIB_NAME)-$(VERSION)-linux-x64.tar.gz -o linux-x64.tar.gz
+	@mkdir -p tmp-linux-x64 lib/linux-x64
+	@tar -xzf linux-x64.tar.gz -C tmp-linux-x64
+	@cp -R tmp-linux-x64/include/* include/ 2>/dev/null || true
+	@cp -R tmp-linux-x64/lib/lib* lib/linux-x64/
+	@rm -rf tmp-linux-x64 linux-x64.tar.gz
+	$(call FIX_LIBS,linux-x64)
 
 	# Download and extract macOS ARM64
 	@echo "Fetching macos-arm64..."
