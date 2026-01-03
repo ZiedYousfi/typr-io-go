@@ -1,7 +1,7 @@
 # Project parameters
 LIB_NAME = axidev-io
 VERSION = v0.3.1
-REPO_URL = https://github.com/ZiedYousfi/axidev-io/releases/download/$(VERSION)
+REPO_URL = https://github.com/axide-dev/axidev-io/releases/download/$(VERSION)
 
 # All supported platforms and architectures
 PLATFORMS = linux-arm64 linux-x64 macos-arm64 macos-x86_64 windows-arm64 windows-x64
